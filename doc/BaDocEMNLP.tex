@@ -38,63 +38,27 @@
 \maketitle
 
 \begin{abstract}
-
-
-  
+ \input{abstract.tex}
 \end{abstract}
 
 \section{Introduction and Motivation}
  \label{sec:Introduction and Motivation}
+ \input{section1.tex}
 
 
 \section{Used Data}
  \label{sec:Used Data}
+ \input{section2.tex}
 
-The documents, which form the basis of this work, are old authorities correspondences where it comes to the storage of nuclear waste. The topics are mainly plans of emergency measures, eliminating access waters and the closure of individual chambers of the mine. At the beginning there were 71 authorities correspondences. 33 of these documents are freely available online. The remaining 38 documents have been provided as part of a research project. The freely accessible documents were written in the years 2009 to 2013. The others, as far as recognizable, are from the years 1971 to 1975. Although picture elements are included in the OCR output, they aren't used in this work. Twelve of the documents were removed because they effectively did not contain any information content. Thus were still 59 documents left with a total of 1239 text areas. In addition, seven empty text areas were removed. Thus remained in 1232 text areas for the following steps. The resulting in the OCR process documents were available in HTML format and has been brought in a CSV format for the next steps which contains the following information for each text area:
-
-
-%Die Dokumente, welche die Grundlage dieser Arbeit bilden, sind alte Beh\"ordenkorrespondenzen, in denen sich mit der Lagerung von Atomm\"ull befasst wird. Hierbei geht es um Themen wie zum Beispiel die Planung von Notfallmaßnahmen, Beseitigung von Zutrittswässern und die Schließung einzelner Kammern des Bergwerks. Zu Beginn gab es 71 Beh\"ordenkorrespondenzen. Davon sind 33 Dokumente online frei zugänglich. Die restlichen 38 Dokumente wurden im Rahmen eines Forschungsprojektes zur Verf\"ugung gestellt. Die 33 frei zug\"anglichen Dokumente sind aus den Jahren 2009 bis 2013. Die restlichen 38 Dokumente sind, soweit erkennbar, aus den Jahren 1971 bis 1975. Zwar sind auch Bildelemente in der OCR Ausgabe enthalten, jedoch wird auf diese in dieser Arbeit nicht zur\"uckgegriffen. Es wurden zwölf Dokumente entfernt, da sie effektiv keinen Informationsgehalt enthielten. Somit standen noch 59 Dokumente mit insgesamt 1239 Textbereichen zur Verfügung. Zusätzlich wurden sieben leere Textbereiche entfernt. Somit verblieben für die folgenden Schritte 1232 Textbereiche. Die im OCR Prozess entstandenen Dokumenten lagen im HTML-Format vor und wurden für die weiteren Schritte in einen CSV-Format gebracht der für jeden Textbereich folgende Informationen enthielt: 
-
-\begin{itemize}
-\setlength{\itemsep}{-5pt}
- \item Document name and index the text area within the document
- \item identifier of the text area assigned classification
- \item position of the text area in the document and its width
- \item by the OCR process recognized text
-\end{itemize}
-
-\begin{comment}
-\begin{itemize}
-\setlength{\itemsep}{-5pt}
- \item Dokumentenname und Index des Textbereiches innerhalb des Dokumentes
- \item Kennung der dem Textbereich zugewiesenen Klassifikation
- \item Position des Textbereiches im Dokument und seine Breite
- \item der vom OCR-Prozess erkannte Inhalt
-\end{itemize}
-\end{comment}
 
 \section{Creation of the hierarchical Category Set}
  \label{sec:Creation of the hierarchical Category Set}
-
-The hierarchical category system extends the seven basic classes, which were used by a project partner for the first classification. The hierarchical structure also offers the possibility that instances of individual classes can be summarized in its superclass. In the following work, the documents were processed by two raters. After careful review of the documents by both raters, five subclasses were added to the first hierarchical category system. Thus, the classification model, which was used for the next steps emerged. To generate the training data each text area of the 59 documents were individually classified by the raters. In order not mutually influence each other in the award of the label, the classification of the two raters was done  independently after a brief discussion about the meaning of each individual classes. In order to verify if and how well the classification matches of both raters, their agreement was calculated by Cohen's Kappa for each evaluation run. In the first evaluation run a $\kappa$ value of 0.6993 was achieved.
-
-%Das hierarchische Kategoriensystem erweitert die sieben grundlegenden Klassen, welche von einem Projektpartner für die erste Klassifikation verwendet wurden. Der hierarchische Aufbau bietet außerdem die Möglichkeit, dass Instanzen einzelner Klassen in ihrer Oberklasse zusammengefasst werden können. Im folgenden Arbeitsverlauf wurden die Dokumente von zwei Bewertern (eng. Rater) bearbeitet. Nach sorgfältiger Durchsicht der Dokumente durch beide Rater wurden dem ersten hierarchischen Kategoriensystem fünf Unterklassen hinzugefügt. Dadurch entstand das Klassifikationsmodell, welches für die nächsten Schritte verwendet wurde. Für die Erzeugung der Trainingsdaten wurde jeder Textbereich der 59 Dokumente einzeln von den Ratern klassifiziert. Um sich nicht gegenseitig bei der Vergabe der Labels zu beeinflussen, wurde diese Klassifikation von beiden Ratern nach einer kurzen Diskussion zum Verständnis der einzelnen Klassen unabhängig voneinander durchgeführt. Um überprüfen zu können, ob und wie gut die Klassifikation der beide Rater übereinstimmt, wurde nach jedem Bewertungsdurchlauf ihre Übereinstimmung durch Cohen's Kappa berechnet. Bereits im ersten Bewertungsdurchlauf wurde ein $\kappa$ Wert von 0,6993 erzielt.
-
-Nevertheless, it became clear that the hierarchical category system was not yet well enough adapted to the available data. Many of the pre-determined classes were not at all or only very rarely assigned. This applies to all subcategories of the third party for example. The third party referred to any personal or address information within a document, which can not be assigned to the actual sender or recipient. There were not only deleted subcategories but also added new ones. This was in the category "(main) text" the case. This was assigned in 41.23 \% of the text areas. Therefore, this category has been split into the two  sub-categories "'content"' and "'structural elements"'.
-
-%Dennoch wurde klar, dass das hierarchische Kategoriensystem noch nicht gut genug an die vorliegenden Daten angepasst war. Viele der vorher festgelegten Klassen wurden gar nicht oder nur sehr selten vergeben. Dies trifft zum Beispiel auf alle Unterkategorien der dritten Partei zu. Die dritte Partei bezeichnet hierbei alle Personen- oder Adressinformationen innerhalb eines Dokumentes, die nicht dem eigentlichen Absender oder Empfänger zugeordnet werden können. Es wurden aber nicht nur Unterkategorien gelöscht, sondern auch neue hinzugefügt. Dies war bei der Kategorie "`(Haupt-)Text"' der Fall. Diese wurde bei 41,23\% der Textbereiche vergeben. Deshalb wurde diese Kategorie in die zwei Unterkategorien "`Fließtext"' und "`Strukturelemente"' aufgespalten. 
-
-The second review cycle revealed that the addition of the two sub-categories "'content"' and "'structural elements"' to the category "'(main) text"' simplifies the assignment of many text areas. Text areas that were assigned as generic "'letterhead element"' (i.e. the root category) because they only contained a single character and were used to structure the text, now can be assigned to the category "'structural element"'. This meant that almost 40 \% of the previously generically as "'letterhead element"' marked text areas could be assigned to another category. Overall, the classification of the raters differed after the second pass on the entire data 324 times. This shows that even before the subsequent merging of the data was an agreement of almost 74 \% and a $\kappa$ 0.7007 from among the raters. Compared to the previous run thus a minimum increase of $\kappa$ is observed. In \newcite{Bakeman1997} is shown that a better value for $\kappa$ is obtained by a larger number of classes. That in this evaluation run now, despite a lower number of classes (37 instead of 47) an increase of $\kappa$ is observed, therefore, indicates a better match of the raters.
-
-%Im zweiten Bewertungsdurchlauf zeigte sich, dass die Ergänzung der zwei Unterkategorien "`Fließtext"' und "`Strukturelemente"' zu der Kategorie "`(Haupt-)Text"' die Zuordnung vieler Textbereiche vereinfacht. Dadurch können nun auch Textbereiche, die vorher nur als generisches "`Briefkopfelement"' (d.h. die Wurzelkategorie) klassifiziert wurden, da sie nur aus einzelnen Zeichen bestanden und zur Auflistung verwendet wurden, jetzt mit der Kategorie "`Strukturelement"' gekennzeichnet werden. Das führte dazu, dass fast 40\% der vorher generisch als "`Briefkopfelement"' gekennzeichneten Textbereiche einer anderen Kategorie zugeordnet werden konnten. Insgesamt unterschied sich die Klassifikation der Rater nach dem 2. Durchlauf auf den ganzen Daten 324 mal. Dies zeigt, dass bereits vor der späteren Zusammenführung der Daten eine Einigung von knapp 74\% und ein $\kappa$ von 0,7007 unter den Ratern bestand. Im Vergleich zum vorherigen Durchlauf ist somit eine minimale Steigerung des $\kappa$ zu beobachten. In \newcite{Bakeman1997} wird gezeigt, dass durch eine größere Anzahl an Klassen ein besserer Wert für $\kappa$ erreicht wird. Dass in diesem Bewertungsdurchlauf nun trotz einer geringeren Anzahl von Klassen (37 anstatt 47) eine Steigerung von $\kappa$ beobachtet wird, weist daher auf eine bessere Übereinstimmung der Rater hin.
-
-In order to create a unique category assignment for this data on the basis of the final hierarchical category system, the text areas whose assignments were different in the two raters, were checked again together and a category was chosen. Overall, the decisions, which of the two views was followed out very evenly distributed. On the results of the merge you can see that only the upper categories of the category system were not assigned. It follows that is at least one example of the training data available for each of the categories.
-
-%Um eine eindeutige Kategorienzuweisung für die vorliegenden Daten auf Grundlage des finalen hierarchischen Kategoriensystem erzeugen zu können, wurden die Textbereiche, deren Zuweisungen sich bei den beiden Ratern unterschieden, zusammen noch einmal überprüft und dabei über eine Einigung diskutiert. Oftmals wurde hierbei die Auffassung eines der beiden Rater übernommen. Insgesamt sind die Entscheidungen, welcher der beiden Auffassungen gefolgt wurde, sehr gleich verteilt ausgefallen. An den Ergebnissen der Zusammenführung (eng. Merging) sieht man, dass nur Oberkategorien des Kategoriensystems nicht vergeben wurden. Daraus folgt, dass für jedes der Blätter mindestens ein Beispiel für die Trainingsdaten zur Verfügung steht. Von den 27 Blattkategorien sind somit nur neun mit unter zehn Beispielen vertreten.
+ \input{section3.tex}
 
 
 \section{Classification Experiments}
  \label{sec:Classification Experiments}
+ \input{section4.tex}
 
 %\begin{tabular}{l l  l l l l}
 %\toprule
@@ -117,10 +81,12 @@ In order to create a unique category assignment for this data on the basis of th
 
 \section{Future Work}
  \label{sec:Future Work}
-
+ \input{section5.tex}
 
 \section*{Acknowledgments}
-
+ \input{acknowledgments.tex}
+ 
+ 
 % include your own bib file like this:
 %\bibliographystyle{acl}
 %\bibliography{acl2015}
