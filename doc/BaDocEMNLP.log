@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.30)  1 JUN 2015 08:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.30)  1 JUN 2015 12:45
 entering extended mode
 **BaDocEMNLP.tex
 (C:\Users\Robert\Documents\GitHub\EMNLP\doc\BaDocEMNLP.tex
@@ -521,7 +521,7 @@ LaTeX Warning: Reference `tab:BalancedWinnow Median xFeatures' on page 5 undefi
 ned on input line 54.
 
 )
-Underfull \hbox (badness 1158) in paragraph at lines 54--62
+Underfull \hbox (badness 1158) in paragraph at lines 54--63
 []\OT1/ptm/m/n/10.95 Auch f[]allt auf, dass 19 der 32 ver-ge-be-nen
  []
 
@@ -532,31 +532,44 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (C:\Users\Robert\Documents\GitHub\EMNLP\doc\section5.tex)
 (C:\Users\Robert\Documents\GitHub\EMNLP\doc\acknowledgments.tex)
 Excluding 'comment' comment. Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 102--118
+Underfull \hbox (badness 10000) in paragraph at lines 103--119
 []\OT1/ptm/m/n/10 Autoren, ers-ter Vor-na-me aus-ge-schrie-ben rest-li-
  []
 
 
-Underfull \hbox (badness 4316) in paragraph at lines 102--118
+Underfull \hbox (badness 4316) in paragraph at lines 103--119
 \OT1/ptm/m/n/10 chen mit . Per-so-nen mit , ge-trennt.  Jahr.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--118
+Underfull \hbox (badness 10000) in paragraph at lines 103--119
 \OT1/ptm/m/it/10 Ti-tel\OT1/ptm/m/n/10 .  Ver-lag, Ver-lags-ort, Ver-lags-land.
 
  []
 
-[5] (C:\Users\Robert\Documents\GitHub\EMNLP\doc\BaDocEMNLP.aux)
+[5] <hKat.png, id=23, 1136.74687pt x 644.4075pt>
+File: hKat.png Graphic file (type png)
+ <use hKat.png>
+Package pdftex.def Info: hKat.png used on input line 123.
+(pdftex.def)             Requested size: 454.6907pt x 257.75844pt.
+
+Overfull \hbox (235.60458pt too wide) in paragraph at lines 123--124
+[][] 
+ []
+
+[6
+
+ <C:/Users/Robert/Documents/GitHub/EMNLP/doc/hKat.png>]
+(C:\Users\Robert\Documents\GitHub\EMNLP\doc\BaDocEMNLP.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2070 strings out of 493921
- 27964 string characters out of 3144873
+ 2076 strings out of 493921
+ 28027 string characters out of 3144873
  89691 words of memory out of 3000000
- 5309 multiletter control sequences out of 15000+200000
+ 5313 multiletter control sequences out of 15000+200000
  20055 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,9n,24p,3850b,260s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -567,9 +580,9 @@ les (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on BaDocEMNLP.pdf (5 pages, 93709 bytes).
+Output written on BaDocEMNLP.pdf (6 pages, 146569 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
+ 47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
