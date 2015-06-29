@@ -4,39 +4,75 @@
 
 %Für die ersten Experimente mit überwachter Klassifikation wurde auf die selben Trainingsalgorithmen zurückgegriffen, die bereits in Preßler \cite{Pressler2014} verwendet wurden. Als Trainingsdaten wurden hierbei die Daten verwendet, welche durch die Einigung der beiden Rater entstanden sind (vgl. Abschnitt \ref{subsec:Ergebnisse nach dem Merging}).
 
-Da innerhalb dieser Trainingsdaten einige Klassen häufig mehrmals hintereinander vergeben wurden und die Implementation die Teilmengen für die k-fold Cross-Validation anhand ihres Index zusammenfügt, wurden die vorliegenden Daten in eine zufällige Reihenfolge gebracht, um eine bessere Verteilung der einzelnen Testfälle in den Trainingsdaten zu gewährleisten. Die ersten Testergebnisse zeigen, dass durch Klasssifikatoren wie den Maximum Entropie Klassifikator oder den Balanced Winnow Klassifikator bereits gute Werte in der Accuracy im Bereich von 0.7 erzielt werden. 
+%Da innerhalb dieser Trainingsdaten einige Klassen häufig mehrmals hintereinander vergeben wurden und die Implementation die Teilmengen für die k-fold Cross-Validation anhand ihres Index zusammenfügt, wurden die vorliegenden Daten in eine zufällige Reihenfolge gebracht, um eine bessere Verteilung der einzelnen Testfälle in den Trainingsdaten zu gewährleisten. Die ersten Testergebnisse zeigen, dass durch Klasssifikatoren wie den Maximum Entropie Klassifikator oder den Balanced Winnow Klassifikator bereits gute Werte in der Accuracy im Bereich von 0.7 erzielt werden. 
 
-Wie bereits in Abschnitt \ref{subsec:Verwendete Verfahren} erwähnt, erreichte der C4.5 Klassifikator trotz seiner längeren Laufzeit lediglich einen Accuracy Wert der unter dem Durchschnitt der restlichen Klassifikatoren liegt. Auch die Decision Tree und Winnow Klassifikatoren erzielten unbefriedigende Werte, weshalb im weiteren Verlauf nur auf den Naive Bayes Klassifikator, Maximum Entropie und Maximum Entropie L1 Klassifikator und den Balanced Winnow Klassifikator eingegangen wird.
+%Wie bereits in Abschnitt \ref{subsec:Verwendete Verfahren} erwähnt, erreichte der C4.5 Klassifikator trotz seiner längeren Laufzeit lediglich einen Accuracy Wert der unter dem Durchschnitt der restlichen Klassifikatoren liegt. Auch die Decision Tree und Winnow Klassifikatoren erzielten unbefriedigende Werte, weshalb im weiteren Verlauf nur auf den Naive Bayes Klassifikator, Maximum Entropie und Maximum Entropie L1 Klassifikator und den Balanced Winnow Klassifikator eingegangen wird.
 
-Um jedoch genauere Aussagen über die Güte eines Klassifikators im Hinblick auf einzelne Klassen zu erhalten, wurden zusätzlich zur Accuracy jedes Klassifikators noch die Precision und Recall Werte jeder einzelnen Klasse durch eine Erweiterung der bestehenden Implementation berechnet. Bei der Cross-Validation erfolgt die Aggregation oft über das Summieren der Precision und Recall Werte für die einzelnen Durchläufe und eine Mittelwertbildung über denselben. Zunächst wurde dieses Verfahren durch die Verwendung der Trail Klasse von $MALLET$ implementiert. Hierbei wurden die getF1(), getPrecision() und getRecall() Methoden verwendet. Da ein Trial im Verfahren der 10-fold Cross-Validation jedoch durch einen Split der Daten in neun Trainings- und einen Testdatensatz erzeugt wird, besteht ein Testdatensatz nur aus 132 oder 133 Textbereichen. Das hierarchisches Kategoriensystem besteht aber bereits aus 37 Klassen, wovon 32 im Rahmen der Trainingsdatenerzeugung vergeben wurden. Da die Klassen innerhalb des Trainingskorpus nicht gleichmäßig verteilt sind, ist ein Vorkommen jeder Klasse in jedem Datensatz sehr unwahrscheinlich. Darüber hinaus existieren Klassen, die sogar weniger als 10 mal vergeben wurden und folglich nicht in jedem Datensatz vorkommen können.
+%Um jedoch genauere Aussagen über die Güte eines Klassifikators im Hinblick auf einzelne Klassen zu erhalten, wurden zusätzlich zur Accuracy jedes Klassifikators noch die Precision und Recall Werte jeder einzelnen Klasse durch eine Erweiterung der bestehenden Implementation berechnet. % Bei der Cross-Validation erfolgt die Aggregation oft über das Summieren der Precision und Recall Werte für die einzelnen Durchläufe und eine Mittelwertbildung über denselben. Zunächst wurde dieses Verfahren durch die Verwendung der Trail Klasse von $MALLET$ implementiert. Hierbei wurden die getF1(), getPrecision() und getRecall() Methoden verwendet. Da ein Trial im Verfahren der 10-fold Cross-Validation jedoch durch einen Split der Daten in neun Trainings- und einen Testdatensatz erzeugt wird, besteht ein Testdatensatz nur aus 132 oder 133 Textbereichen. Das hierarchisches Kategoriensystem besteht aber bereits aus 37 Klassen, wovon 32 im Rahmen der Trainingsdatenerzeugung vergeben wurden. Da die Klassen innerhalb des Trainingskorpus nicht gleichmäßig verteilt sind, ist ein Vorkommen jeder Klasse in jedem Datensatz sehr unwahrscheinlich. Darüber hinaus existieren Klassen, die sogar weniger als 10 mal vergeben wurden und folglich nicht in jedem Datensatz vorkommen können.
 
 %Dies hatte zur Folge, dass die Methoden für nicht vorhandene Klassen in den Testdaten den Wert 1 für Precision und Recall lieferten. Logisch gesehen sind diese Werte zwar zu rechtfertigen, da der Klassifikator null von null Beispielen gefunden hat, führen aber bei der Aggregation der einzelnen Daten, welche aus den verschiedenen Trials gewonnen wurden, zu einer Verzerrung des Gesamtergebnisses. Die Ergebnisse für seltener vorkommende Klassen werden dadurch irreführenderweise dem Wert 1 angenähert. Erst ab einem totalem Vorkommen einer Klasse in den Gesamtdaten von 20 bis 25 werden realistische Werte erzielt. Auch zeigte sich, dass der durch die Methode getF1() erhaltene F1 Wert oftmals von dem Wert abweicht, welcher aus den Precision und Recall Werten nach Formel \ref{eq:Berechnung F1} (vgl. Seite \pageref{eq:Berechnung F1}) berechnet werden kann. Um verlässliche und in sich stimmige Ergebnisse zu erzielen, wurde daher auf die Verwendung der getF1(), getPrecision() und getRecall() Methoden verzichtet. 
 
-Stattdesssen wurde in der vorliegenden Arbeit die Aggregation über das Summieren der Confusionmatrizen der einzelnen Validierungsläufe, welche durch die Verwendung der ConfusionMatrix Klasse von $MALLET$ erzeugt wurden, zu einer Gesamtmatrix vorgenommen. Die Werte für F1, Precision und Recall wurden auf Basis dieser Gesamtmatrix berechnet. 
+% Stattdesssen wurde in der vorliegenden Arbeit die Aggregation über das Summieren der Confusionmatrizen der einzelnen Validierungsläufe, welche durch die Verwendung der ConfusionMatrix Klasse von $MALLET$ erzeugt wurden, zu einer Gesamtmatrix vorgenommen. Die Werte für F1, Precision und Recall wurden auf Basis dieser Gesamtmatrix berechnet. 
 
-Eine stichprobenartige Überprüfung zeigte, dass zahlenmäßig häufig auftretende Klassen wie zum Beispiel "`Fließtext"' (1421) oder "`Sender(Adresse, Postfach"' (1123) eine geringe Abweichung der F1 Werte von wenigen Prozentpunkten (im Bereich von circa plus zwei bis minus sechs Prozent) von den mittels getPrecision() und getRecall() berechneten F1 Werten aufweisen. Dabei besitzen die durch die Aggregation der Confusionmatrizen berechneten F1 Werte, in der Regel, den geringeren Wert. Das hat den positiven Nebeneffekt, dass die Leistungsfähigkeit unserer Klassifikatoren eher unterschätzt als überschätzt wird. Dieser positive Aspekt ist auch bei zahlenmäßig selten auftretenden Klassen wie zum Beispiel "`Datum"' (121) oder "`Ort"' (13) zu beobachten.
+% Eine stichprobenartige Überprüfung zeigte, dass zahlenmäßig häufig auftretende Klassen wie zum Beispiel "`Fließtext"' (1421) oder "`Sender(Adresse, Postfach"' (1123) eine geringe Abweichung der F1 Werte von wenigen Prozentpunkten (im Bereich von circa plus zwei bis minus sechs Prozent) von den mittels getPrecision() und getRecall() berechneten F1 Werten aufweisen. Dabei besitzen die durch die Aggregation der Confusionmatrizen berechneten F1 Werte, in der Regel, den geringeren Wert. Das hat den positiven Nebeneffekt, dass die Leistungsfähigkeit unserer Klassifikatoren eher unterschätzt als überschätzt wird. Dieser positive Aspekt ist auch bei zahlenmäßig selten auftretenden Klassen wie zum Beispiel "`Datum"' (121) oder "`Ort"' (13) zu beobachten.
 
 % Bei diesen Klassen werden durch die Verwendung der getPrecision() und getRecall() Methoden unrealistisch hohe F1 Werte auf Grund von logischen Werten im Bereich von beinahe 0.9 erzielt, welche durch die Aggregation über die Confusionmatrizen vermieden werden.
 
+In order to evaluate whether the manually assigned classes to the training data can be reproduced automatically, we employed several machine learning algorithms and compared their performance. In a first set of experiments we used a standard bag of words model. As classes within the training data were often assigned repeatedly, the order of the text blocks in our gold standard was randomized to create a better distribution of the individual test cases in the training data. To make the best use of our limited amount of data, we used ten-fold cross-validation for training and testing.
+
+Among the range of classifiers we initially trained were standard Naive Bayes, Maximum Entropy (with and without regularisation), Winnow, Balanced Winnow and two decision tree learners (modified ID3 and C4.5).\footnote{For the implementation of the training algorithms we used the java based $MALLET$ toolkit. Cf.\ \url{http://mallet.cs.umass.edu}.}
+
+An initial run of experiments on our annotated data set using the full category hierarchy (Fig.\ \ref{fig:letterexample}) showed that accuracy values in the range of 0.7 can be achieved by a Maximum Entropy classifier (using L1 regularisation) and a Balanced Winnow classifier. We decided not to pursue further with (unbalanced) Winnow and the decision tree classifiers as they achieved low accuracy values despite far longer training times in some cases (Table \ref{tab:accuracy}).
+
+
+\begin{table}
+ \centering
+ \begin{tabular}{l c}
+  \toprule
+  \textbf{Classifier} & \textbf{Accuracy} \\
+  \midrule
+  Naive Bayes			& 0.636	\\
+  Maximum Entropie		& 0.708 \\ 
+  Maximum Entropie L1	& 0.689	\\	
+  Winnow				& 0.496	\\
+  Balanced Winnow		& 0.687	\\
+  Decision Tree			& 0.378 \\
+  C4.5					& 0.558	\\
+  \bottomrule
+ \end{tabular}
+ \caption{Accuracy values achieved by various supervised learning algorithms on our annotated training data (using the complete hierarchy and 10-fold cross-validation)}
+ \label{tab:accuracy}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%
+% Table tab:accuracy caption
+% Accuracy values achieved by various supervised learning algorithms on our annotated training data (using the complete hierarchy and 10-fold cross-validation).
+%%%%%%%%%%%%%%%%%
+
+To obtain more accurate information about the performance of classifiers with regard to individual classes, we calculated precision, recall and F1 values for each class. Here we noticed, that despite reasonable accuracy values, the classifiers achieved F1 values of less than 0.5 for between a third (34.4\%) and nearly two thirds (62.5\%) of classes in classes in our category system. Unsurprisingly this often happened for classes which had very few example instances in our training data. In designing the category hierarchy and compiling our gold standard annotation we were mostly driven by the idea of a robust and versatile classification framework for our chosen domain and a body of ``ground truth'' in the sense of that framework and not so much by practical considerations of how well the data could serve as a training set for supervised learning. As a result we decided to keep some of the classes in our category hierarchy which were used less than ten times in our annotated data, if we felt that the category was useful in principle.
+
+In practice we found that classes with less than 25 occurrences overall in our data set were poorly recognized. An exception to this are ``generic salutation'' and ``salutation, name'' which had precision and recall values in excess of 90\% for all classifiers despite occurring only 11 and 8 times respectively. This may be due to the formulaic nature of the corresponding text.
+
+% hierarchisches kategoriensystem
+
+In addition to comparing classifiers trained on various truncations of the category hierarchy, we experimented with the introduction of additional features which go beyond a pure bag of words model. In our approach we introduced one additional feature for each word in the bag of words which was intended to capture the capitalisation signature of the word. This was done by including a string of upper and/or lower case xs in the bag corresponding to the upper and lower case letters in the original word. Thus the word ``Bundesamt'' would be transformed into ``Xxxxxxxxx''.
+
+% In addition to evaluating different classifiers against each other, we varied our experiments along two different lines.
+
 \vspace*{2cm}
 
+% As for classifiers, after some experiments we decided to use Naive Bayes, Maximum Entropy, Maximum Entropy L1, and Balanced Winnow classifiers. We also trained Winnow, C4.5 and Decision Trees classifier at the beginning, but omitted those in the further steps because they either achieved a way lower accuracy or needed a far longer training time (about 27x) without better results.  
 
-To check whether the manually assigned class to the training data can be reproduced by machine, we trained several training algorithms to check, which one would get the best results for the classifikation of future documents. The classifiers we used are the Naive Bayes, Maximum Entropy, Maximum Entropy L1, and Balanced Winnow classifiers. We used Winnow, C4.5 and Decision Trees at the beginning but omitted those in the further steps because they eiter achieved a way lower accuracy or needed a far longer training time (about 27x) without better results. For the implementation of the training algorithms we used the java based $MALLET$ toolkit. 
+% The first test results show that good results in accuracy in the range of 0.7 already can be achieved by the maximum entropy L1 classifier as well as the balanced winnow classifier. However, to obtain more accurate information about the quality of a classifier with regard to individual classes, we calculated the precision and recall values of each class by extending the existing implementation. 
+%bene vorher schon genannt? auf die confusion matrix eingehen?
 
-
-Because within the training data, some classes were often repeatedly awarded and the implementation joins the subsets for k-fold cross-validation based on their index, the order within the available data were randomized to create a better distribution of the individual test cases in the training data. 
-
-The first test results show that good results in accuracy in the range of 0.7 already be achieved by the maximum entropy classifier as Klasssifikatoren or the Balanced Winnow classifier.
-
-
-
-
-
+% After calculating the precision and recall values we noticed, although we achieved accuracy values around 0.7, that the classifiers achieved bad precision and recall values under 0.5 for 34.4 to 62.5 \% of the classes. 
 
 
 \vspace*{2cm}
 
-Bei der Verwendung des hierarchischen Kategoriensystems zeigte sich bereits, dass trotz der relativ guten Accuracy manche der Klassen sehr schlechte Werte bezüglich Precision und Recall aufweisen. Dies tritt sehr häufig bei Klassen mit geringem Vorkommen auf. Auch wird deutlich, dass der Naive Bayes Klassifikator die meisten Probleme mit der geringen Anzahl von Trainingsbeispielen hat. Grundsätzlich wird aber auch klar, dass Klassen die insgesamt weniger als 25 mal im Trainingsdatensatz vorkommen häufig schlecht erkannt werden. Diese Grenze fiel bereits bei der Verwendung der getPrecision() und getRecall() Methoden von $MALLET$ auf (s.o.). Eine Ausnahme hierzu bilden die Klassen "`Generische Begrüßung"' und "`Begrüßung, Name"'. Obwohl sie nur 11 bzw. 8 mal vorkommen, besitzen sie bei allen vier Klassifikatoren hohe Werte für Precision und Recall die im Bereich von 0.9 bis 1.0 liegen. Auch haben manche Klassen zwar eine hohe Precision aber einen sehr geringen Recall. 
+% Bei der Verwendung des hierarchischen Kategoriensystems zeigte sich bereits, dass trotz der relativ guten Accuracy manche der Klassen sehr schlechte Werte bezüglich Precision und Recall aufweisen. Dies tritt sehr häufig bei Klassen mit geringem Vorkommen auf. Auch wird deutlich, dass der Naive Bayes Klassifikator die meisten Probleme mit der geringen Anzahl von Trainingsbeispielen hat. Grundsätzlich wird aber auch klar, dass Klassen die insgesamt weniger als 25 mal im Trainingsdatensatz vorkommen häufig schlecht erkannt werden. Diese Grenze fiel bereits bei der Verwendung der getPrecision() und getRecall() Methoden von $MALLET$ auf (s.o.). Eine Ausnahme hierzu bilden die Klassen "`Generische Begrüßung"' und "`Begrüßung, Name"'. Obwohl sie nur 11 bzw. 8 mal vorkommen, besitzen sie bei allen vier Klassifikatoren hohe Werte für Precision und Recall die im Bereich von 0.9 bis 1.0 liegen. Auch haben manche Klassen zwar eine hohe Precision aber einen sehr geringen Recall. 
 
 %Dies tritt hauptsächlich bei Klassen wie "`Sendeweg"', "`Anhangzeile"' und "`Sender, Empfänger"' auf, welche nur ein geringes Vorkommen aufweisen. 
 

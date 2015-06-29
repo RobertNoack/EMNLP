@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.30)  1 JUN 2015 12:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.30)  12 JUN 2015 07:43
 entering extended mode
 **BaDocEMNLP.tex
 (C:\Users\Robert\Documents\GitHub\EMNLP\doc\BaDocEMNLP.tex
@@ -417,118 +417,110 @@ Underfull \vbox (badness 1616) has occurred while \output is active []
 
 ])
 (C:\Users\Robert\Documents\GitHub\EMNLP\doc\section4.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 23.
+
+Underfull \hbox (badness 1348) in paragraph at lines 23--23
+\OT1/ptm/m/n/9 used the ja-va ba-sed $\OML/cmm/m/it/9 MALLET$ \OT1/ptm/m/n/9 to
+ol-kit. Cf. $\OT1/pcr/m/n/9 http : / /$
+ []
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
 
+LaTeX Warning: Reference `fig:letterexample' on page 2 undefined on input line 
+25.
 
-LaTeX Warning: Reference `subsec:Verwendete Verfahren' on page 2 undefined on i
-nput line 9.
-
-
-Underfull \hbox (badness 1389) in paragraph at lines 11--12
-\OT1/ptm/m/n/10.95 Trai-nings-da-ten-er-zeu-gung ver-ge-ben wur-den. Da
- []
-
-
-Underfull \hbox (badness 5189) in paragraph at lines 17--18
-[]\OT1/ptm/m/n/10.95 Eine stich-pro-ben-ar-ti-ge []Uberpr[]ufung zeig-te,
- []
-
-
-Underfull \hbox (badness 3758) in paragraph at lines 17--18
-\OT1/ptm/m/n/10.95 dass zah-lenm[]aig h[]aufig auf-tre-ten-de Klas-sen
- []
-
-
-Underfull \vbox (badness 6047) has occurred while \output is active []
-
- [2]
-Underfull \hbox (badness 1137) in paragraph at lines 43--44
+[2]
+Underfull \hbox (badness 1137) in paragraph at lines 79--80
 \OT1/ptm/m/n/10.95 ben Klas-sen einen F1 Wert von null er-reich-
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 43--44
+Underfull \hbox (badness 1147) in paragraph at lines 79--80
 \OT1/ptm/m/n/10.95 ten, war dies beim Nai-ve Bayes Klas-si-fi-ka-tor
  []
 
 
 LaTeX Warning: Reference `tab:NaiveBayes 4Ebenen' on page 3 undefined on input 
-line 45.
+line 81.
 
 
 LaTeX Warning: Reference `tab:BalancedWinnow 4Ebenen' on page 3 undefined on in
-put line 45.
+put line 81.
+
+
+Underfull \vbox (badness 1147) has occurred while \output is active []
+
 
 
 LaTeX Warning: Reference `subsec:Hierarchisches Kategoriensystem' on page 3 und
-efined on input line 47.
+efined on input line 83.
 
 
 LaTeX Warning: Reference `pic:Accuracy_ohneX_mitX' on page 3 undefined on input
- line 47.
+ line 83.
 
 
-Underfull \vbox (badness 6047) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
 
-LaTeX Warning: Citation `Pressler2014' on page 4 undefined on input line 49.
+LaTeX Warning: Citation `Pressler2014' on page 4 undefined on input line 85.
 
 
-LaTeX Warning: Citation `Pressler2014' on page 4 undefined on input line 49.
+LaTeX Warning: Citation `Pressler2014' on page 4 undefined on input line 85.
 
 
-LaTeX Warning: Citation `Pressler2014' on page 4 undefined on input line 49.
+LaTeX Warning: Citation `Pressler2014' on page 4 undefined on input line 85.
 
 
 LaTeX Warning: Reference `subsubsec:Naive Bayes Klassifikator' on page 4 undefi
-ned on input line 49.
+ned on input line 85.
 
 
 LaTeX Warning: Reference `tab:Accuracy Klassifikation' on page 4 undefined on i
-nput line 49.
+nput line 85.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
-Underfull \hbox (badness 1546) in paragraph at lines 52--53
+Underfull \hbox (badness 1546) in paragraph at lines 88--89
 \OT1/ptm/m/n/10.95 Empf[]anger sehr un-ter-schied-lich aus-fal-len. Die
  []
 
 
-LaTeX Warning: Reference `tab:Vergleich Accuracy Vorkommen 4Ebenen' on page 5 u
-ndefined on input line 54.
+LaTeX Warning: Reference `tab:Vergleich Accuracy Vorkommen 4Ebenen' on page 4 u
+ndefined on input line 90.
 
 
-LaTeX Warning: Reference `tab:Vergleich Accuracy Vorkommen 3Ebenen' on page 5 u
-ndefined on input line 54.
+LaTeX Warning: Reference `tab:Vergleich Accuracy Vorkommen 3Ebenen' on page 4 u
+ndefined on input line 90.
 
 
-LaTeX Warning: Reference `tab:Vergleich Accuracy Vorkommen Median' on page 5 un
-defined on input line 54.
+LaTeX Warning: Reference `tab:Vergleich Accuracy Vorkommen Median' on page 4 un
+defined on input line 90.
 
 
-LaTeX Warning: Reference `tab:NaiveBayes 4Ebenen' on page 5 undefined on input 
-line 54.
+LaTeX Warning: Reference `tab:NaiveBayes 4Ebenen' on page 4 undefined on input 
+line 90.
 
 
-LaTeX Warning: Reference `tab:BalancedWinnow Median xFeatures' on page 5 undefi
-ned on input line 54.
+LaTeX Warning: Reference `tab:BalancedWinnow Median xFeatures' on page 4 undefi
+ned on input line 90.
 
 )
-Underfull \hbox (badness 1158) in paragraph at lines 54--63
+Underfull \hbox (badness 1158) in paragraph at lines 90--63
 []\OT1/ptm/m/n/10.95 Auch f[]allt auf, dass 19 der 32 ver-ge-be-nen
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+ [4]
 (C:\Users\Robert\Documents\GitHub\EMNLP\doc\section5.tex)
 (C:\Users\Robert\Documents\GitHub\EMNLP\doc\acknowledgments.tex)
 Excluding 'comment' comment. Excluding 'comment' comment.
@@ -547,42 +539,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--119
 
  []
 
-[5] <hKat.png, id=23, 1136.74687pt x 644.4075pt>
+Excluding 'comment' comment. <hKat.png, id=20, 1136.74687pt x 644.4075pt>
 File: hKat.png Graphic file (type png)
- <use hKat.png>
-Package pdftex.def Info: hKat.png used on input line 123.
+
+<use hKat.png>
+Package pdftex.def Info: hKat.png used on input line 145.
 (pdftex.def)             Requested size: 454.6907pt x 257.75844pt.
 
-Overfull \hbox (235.60458pt too wide) in paragraph at lines 123--124
+Overfull \hbox (235.60458pt too wide) in paragraph at lines 145--146
 [][] 
  []
 
-[6
-
- <C:/Users/Robert/Documents/GitHub/EMNLP/doc/hKat.png>]
+[5 <C:/Users/Robert/Documents/GitHub/EMNLP/doc/hKat.png>]
 (C:\Users\Robert\Documents\GitHub\EMNLP\doc\BaDocEMNLP.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2076 strings out of 493921
- 28027 string characters out of 3144873
- 89691 words of memory out of 3000000
- 5313 multiletter control sequences out of 15000+200000
- 20055 words of font info for 47 fonts, out of 3000000 for 9000
+ 2097 strings out of 493921
+ 28224 string characters out of 3144873
+ 89699 words of memory out of 3000000
+ 5325 multiletter control sequences out of 15000+200000
+ 26449 words of font info for 60 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,9n,24p,3850b,260s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/urw/times/utmri8a.pfb>
-Output written on BaDocEMNLP.pdf (6 pages, 146569 bytes).
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on BaDocEMNLP.pdf (5 pages, 153098 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
+ 48 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
